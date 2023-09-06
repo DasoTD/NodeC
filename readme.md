@@ -5,6 +5,15 @@ Password = Bcrypt// argon2
 Session = JsonWebToken
 
 
+
+
+
+
+
+
+
+
+<!-- require('dotenv').config(); -->
 <!-- const { PORT } = process.env;
 
 async function onListening() {
