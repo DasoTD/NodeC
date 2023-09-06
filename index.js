@@ -1,5 +1,7 @@
 import http from "http";
 
+import dotenv from "dotenv/config";
+
 const server = http.createServer((req, res) => {
     res.statusCode =200;
     res.send({ ip : req.ip})
@@ -11,7 +13,12 @@ const server = http.createServer((req, res) => {
 }
 );
 
-const port = 9000
+// require('dotenv').config()
+
+const port = process.env.PORT;
+import ConnectDB from "./src/db/index.js"
+
+console.log(port)
 
 let a,b,c;
 a = 6;
@@ -22,5 +29,6 @@ c =a+b;
 //   }
 server.listen(port, () => {
     console.log(c)
+    ConnectDB()
     console.log(`server running ${port}`)
 })
