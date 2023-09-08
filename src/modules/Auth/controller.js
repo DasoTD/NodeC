@@ -11,9 +11,13 @@ class AuthController {
                 firstname
             }
             console.log("BUKOLA O.")
-            // let user = await AuthService.storeUser(payload)
+            let findEmail = await AuthService.findByEmail(email);
+            if(findEmail){
+                return res.JSON("email already exist");
+            }
+            let user = await AuthService.storeUser(payload)
 
-            // return res.JSON(user)
+            return res.JSON(user)
 
         } catch (error) {
             return error
